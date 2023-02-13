@@ -1,9 +1,21 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
-    $(() => {//jQuery로 a객체를 찾아내고. attribute를 조작해준다.
-        console.log($('a').attr('href')) //return값은 a객체 2개가 들어있는 collection. 첫번째로 찾은 href객체를 읽는다.
+    $(() => {
+        //jQuery로 a객체를 찾아내고. attribute를 조작해준다.
+        // return값은 a객체 2개가 들어있는 collection.
+        // read시에는 첫번째로 찾은 href객체를 읽는다.
+        console.log($('a').attr('href'))
 
-        $('a').attr('href', 'https://www.daum.net/')
+        $('a').attr('href', 'https://www.daum.net/') //a객체의 collection에 있는 모든 attribute를 write.
+        
+        //a객체의 attribute가 n개일 경우.
+        $('a').attr({
+            href: 'https://jquery.com',
+            target: '_blank'
+        })
+        
+        //모든 a객체의 attribute 'target' 삭제
+        $('a').removeAttr('target')
     })
 </script>
 

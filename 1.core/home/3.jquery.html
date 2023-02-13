@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+let msg = 'div.foo가 '
+$(() => {//$('div.foo')는 결과값 [] 를 return한다. (boolean 변환시, 값이 있음!)
+    /*
+    if($('div.foo').length) msg += '있다.'
+    else msg += '없다.'
+    */
+    /*$('.foo').length ? msg += '있습니다.' : msg += '없습니다.'*/
+    msg += $('div.foo').length ? '있다.' : '없다.'
+    console.log(msg)
+})
+</script>
+
+<div class='foo1'></div>
