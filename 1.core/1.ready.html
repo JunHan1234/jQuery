@@ -1,2 +1,14 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+    //jQuery(DOM object = HTML element) = jQuery object으로 return
+    //ready(callback). ready는 DOM이 다 준비될때까지 기다린다. 필수적 function.
+    jQuery(document).ready(() => $/*jQuery를 줄여서 $로 표현*/('body')/*body객체를 찾아서 jQuery의 parameter로 사용.*/.append('<p>one</p>'))
 
+    $(document).ready(() => $('body').append('<p>two</p>'))
 
+    let readyFn = () => $('body').append('<p>three</p>')
+    $(document).ready(readyFn)
+
+    //jQuery(document).ready를 줄여서 $로 표현.
+    $(() => $('body').append('<p>four</p>'))
+</script>
