@@ -1,0 +1,19 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('.1').children()) //직계 귀속들을 return.
+    console.log($('.1').find('div'))//중요! find()는 leaf node까지 전부 뒤져본 후 처음으로 돌아와 다른 가지를 다시 leaf node까지 검색한다.
+})
+</script>
+
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

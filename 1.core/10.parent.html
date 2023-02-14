@@ -1,0 +1,26 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    console.log($('.4').parent())       //직계부모만을 return.
+
+    console.log($('.4').parents())      //부모들을 return.
+
+    console.log($('.4').parents('div')) //div 인 부모들을 return.
+
+    console.log($('.4').parentsUntil('div.1'))//div.4초과 div.1 미만.
+
+    console.log($('.4').closest('div'))  //div.4 이상인 jquery object.
+})
+</script>
+
+<pre>
+    <div class='1'>
+        <div class='2-1'>
+            <div class='3'>
+                <div class='4'></div>
+            </div>
+        </div>
+        <div class='2-2'></div>
+        <div class='2-3'></div>
+    </div>
+</pre>

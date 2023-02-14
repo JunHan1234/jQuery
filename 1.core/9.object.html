@@ -4,9 +4,9 @@
 $(() => {
     let $div1 = $('div')    //jquery object을 div1에 저장.
     let $div2 = $div1.eq(0) //jquery object. 0번째 element collection return.
-    let div3 = $div1.get(0) //DOM object.
+    let div3 = $div1.get(0) //DOM object이 직접 return.
 
-    console.log($div1, $div2, div3) //dom object과 jquery object의 비교.
+    console.log($div1, $div2, div3) //jquery object과 DOM object의 비교.
     console.log(typeof $div1, typeof $div2, typeof div3)
 
     let $div11 = $('div')
