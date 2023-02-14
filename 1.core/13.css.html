@@ -1,0 +1,15 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //css는 style을 그때그때 준비해서 넣는다.
+    console.log($('h1').css('font-size')) //read이므로 첫번째 collection값을 읽는다. 32px
+    console.log($('h1.big').css('font-size', '3rem'))
+    $('h1.big').css({
+        'font-size': '4rem', //attr name이 두 단어로 연결될 때는 ''를 써야한다.
+        color: 'red' //한 단어일때는 ''를 안써도 된다.(선택사항)
+    })
+})
+</script>
+
+<h1>HELLO</h1>
+<h1 class='big'>WORLD</h1>

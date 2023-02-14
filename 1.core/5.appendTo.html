@@ -2,7 +2,7 @@
 <script>
 $(() => {
     //주어컬렉션에 있는 div들을 hr tag block 사이에다가 append 시킨다.
-    $('div').appendTo('hr')
+    $('div').appendTo($('hr'))
     // 과제: 위 코드를 append() 로 refactoring 하라.
     $('hr').append($('div'))
 })

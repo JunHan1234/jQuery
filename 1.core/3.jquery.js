@@ -1,3 +1,7 @@
+//script code만을 따로 떼어 만들 수 있다.
+//이렇게 떼어 만든 js파일을 script src로 첫머리에 넣어줄 수 있다.
+
+//$(css selector)
 //jquery의 find return값은 collection이다.
 $('#myId') // 예로 <div id='myId'></div> 를 찾아낸다.
 

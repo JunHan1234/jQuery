@@ -1,19 +1,21 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
-$(() => {//html method를 call한다.
+$(() => {//html method를 call한다. =>주어객체 미만의 html contents를 읽어낸다.
     console.log($('h1').html()) //읽기에서는 collection에 있는 first element만 다룬다.
 
     $('footer').html('<mark>foot</mark>') //html contents를 주어객체의 자식으로 write해준다.
     console.log($('footer').html())
 
     console.log($('header').find('h1').eq(1).html()) //find가 h1 2개를 return. 그것의 index 1번째 요소의 html contents.
+    
+    //write.
     $('header').find('h1').eq(1).html('<hr>') //world가 있던 자리가 <hr>로 변함을 확인.
 
     $('ul').find('li').eq(2).html('index: 2').end() //index: 2라는 text가 index2번째 li에 들어감을 확인.
-        .eq(3).html('index: 3').end()       //end에서 return되는 collection은 li 5개이다.
+        .eq(3).html('index: 3').end()       //end에서 return되는 collection은 li 5개이다. $('ul').find('li')와 동일.
         .eq(4).html('index: 4')             //end()는 chaining을 위해 주어가 되었던 collection으로 돌아가는것.
 
-    //단순 text를 넣고 싶은경우
+    //write. 단순 text node만을 넣고 싶은경우
     $('h1').text('Hi')
     console.log($('h1').text()) //모든 text element를 읽은 뒤 붙여서 하나의 string으로 return.
 })

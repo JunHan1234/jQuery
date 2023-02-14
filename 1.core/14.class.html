@@ -1,0 +1,30 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let h1 = $('h1') //모든 h1 객체를 찾아낸다.
+
+    //write. 모든 collection의 값들에 적용.
+    h1.addClass('blue') //blue class를 h1객체에 넣는다.
+
+    //delete. 모든 collection의 값들에 적용.
+    h1.removeClass('blue')
+
+    //class가 없으면 add, 있으면 remove. 음양.
+    h1.toggleClass('blue')
+
+    //class가 있는지 조사
+    console.log(h1.hasClass('blue'))
+
+    //과제: h1.blue 이면 console 에 blue 를 출력하라.
+    h1.hasClass('blue') && console.log('blue')
+})
+</script>
+
+<style>
+    .blue {
+        color: blue;
+    }
+</style>
+
+<h1>HELLO</h1>
+<h1>WORLD</h1>

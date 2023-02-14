@@ -3,8 +3,10 @@
 <script>
 $(() => {
     let $div1 = $('div')    //jquery object을 div1에 저장.
+
+    //eq로 호출하면, 항상 새로운 collection 객체가 만들어진다. 여기에 DOM object 주소값 저장.
     let $div2 = $div1.eq(0) //jquery object. 0번째 element collection return.
-    let div3 = $div1.get(0) //DOM object이 직접 return.
+    let div3 = $div1.get(0) //순수한 DOM object이 직접 return.
 
     console.log($div1, $div2, div3) //jquery object과 DOM object의 비교.
     console.log(typeof $div1, typeof $div2, typeof div3)

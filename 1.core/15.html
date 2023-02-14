@@ -1,0 +1,22 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let h1 = $('h1')
+    
+    //read.
+    console.log(h1.width(), h1.height()) //1077 43 (단위는 px)
+
+    //write.
+    h1.width('5rem')
+    h1.height('5rem')
+})
+</script>
+
+<style>
+    h1 {
+        border: .1rem solid;
+    }
+</style>
+
+<h1>HELLO</h1>
+<h1>WORLD</h1>
