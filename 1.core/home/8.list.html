@@ -13,8 +13,8 @@ $(() => {
         items.push(`<li>item ${i}</li>`) //push를 이용해 item contents가 10개 담긴 collection을 만든다.
    
     //비싼 작업은 한번만!
-    //items []안의 element들을 join method가 하나의 string값 
-    //'<li>item 0</li><li>item 1</li>...<li>item 9</li>' 으로 합쳐서 return하고,
+    //items []안의 element들을 join method가 하나의 string값으로
+    //'<li>item 0</li><li>item 1</li>...<li>item 9</li>' 합쳐서 return하고,
     //이를 jquery object로 변환하여 ul이라는 tag에 append시킨다.
     $(items.join('')).appendTo('ul')
 })
