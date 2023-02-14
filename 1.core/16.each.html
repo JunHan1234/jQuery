@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //iterating. DOM object들이 return. collection 대상의 작업 each.
+    //$('li').each((i, e) => console.log(i, e))
+    
+    // 과제: 아래 결과가 나오도록, 위 코드를 수정하라.
+    $('li').each((i, e) => console.log(i, e.id))
+
+    /* 결과
+    0 'a'
+    1 'b'
+    2 'c'
+    */
+
+    //utility method. array를 대상으로 작업한다.
+    jQuery.each([1, 2, 3, 4], (i, e) => console.log(`[${i}]: `, e))
+    //array로 변환시켜주는 method toArray.
+    $.each($('li').toArray(), (i, e) => console.log(i, e))
+
+    $.each({userName: 'adelia', age: 20}, (key, value) => console.log(key, ':', value))
+})
+</script>
+
+<ul>
+    <li id='a'>A</li>
+    <li id='b'>B</li>
+    <li id='c'>C</li>
+</ul>
