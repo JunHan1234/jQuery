@@ -1,8 +1,12 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    console.log($('.1').children()) //직계 귀속들을 return.
-    console.log($('.1').find('div'))//중요! find()는 leaf node까지 전부 뒤져본 후 처음으로 돌아와 다른 가지를 다시 leaf node까지 검색한다.
+    //직계 귀속들을 return.
+    console.log($('.1').children())
+
+    //중요! find()는 leaf node까지 전부 뒤져본 후,
+    // 처음 기준이 되었던 객체로 돌아와 다른 가지를 다시 leaf node까지 검색한다.
+    console.log($('.1').find('div'))
 })
 </script>
 

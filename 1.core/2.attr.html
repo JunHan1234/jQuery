@@ -6,15 +6,17 @@
         // read시에는 첫번째로 찾은 href객체를 읽는다.
         console.log($('a').attr('href'))
 
-        $('a').attr('href', 'https://www.daum.net/') //a객체의 collection에 있는 모든 attribute를 write.
+        //a객체의 collection에 있는 모든 attribute를 write.
+        //.attr(attribute name, attribute value)
+        $('a').attr('href', 'https://www.daum.net/')
         
-        //a객체의 attribute가 n개일 경우.
+        //모든 a객체들의 attribute n개를 write할 경우.
         $('a').attr({
             href: 'https://jquery.com',
             target: '_blank'
         })
         
-        //모든 a객체의 attribute 'target' 삭제
+        //모든 a객체의 'target' attribute를 삭제
         $('a').removeAttr('target')
     })
 </script>

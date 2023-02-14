@@ -1,7 +1,8 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    //div객체를 모두 들어내 hr tag들 다음에 각각 insert한다.
+    //div객체를 모두 찾아내고 jquery object collection에 넣은 후,
+    //이 collection을 hr tag들 다음에 각각 insert한다.
     $('div').insertAfter($('hr'))
 })
 </script>

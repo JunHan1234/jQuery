@@ -16,6 +16,7 @@ $('#content ul.people li')
 </div>
 */
 
+//같은 a 객체가 있을경우, 첫번째 index인 녀석을 return.
 $('a.external:first')
 /*
 <a class='external'></a> //collection에 담기는 녀석.
@@ -34,7 +35,7 @@ $('li:odd') //index가 홀수번째인 요소를 모두 가져온다.
 
 $('div:visible') //현재 화면에 보이는것을 골라낸다.
 
-$('a[rel$="thinger"]') //끝이름이 thinger인 녀석들이 collection에 담긴다.
+$('a[rel$="thinger"]') //끝이름($=)이 thinger인 녀석들이 collection에 담긴다.
 /*
 <a rel='do-nothinger'></a> --
 <a rel='so-thinger'></a> --
@@ -87,7 +88,7 @@ $('form :checked')
 /*
 <input type='radio'/> --
 <input type='checkbox'/> --
-<select><option></option></select> -- //check된 옵션.
+<select><option></option></select> -- //check된 option.
 */
 
 $('form :selected') // <select><option></option></select>
@@ -114,6 +115,6 @@ $('form input[name="gender"]:radio')
 <input type='radio' name='gender'/>
 */
 
-$('form :reset') // <input type='reset'/> //$('form :reset').알고리즘으로 개발자가 설정가능.
+$('form :reset') // <input type='reset'/> //$('form :reset').알고리즘 으로 개발자가 어떠한 form의 reset 설정가능.
 
 $('form :submit') // <input type='submit'/>

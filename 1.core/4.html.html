@@ -6,7 +6,7 @@ $(() => {//html method를 call한다.
     $('footer').html('<mark>foot</mark>') //html contents를 주어객체의 자식으로 write해준다.
     console.log($('footer').html())
 
-    console.log($('header').find('h1').eq(1).html()) //finder가 h1 2개를 return. 그것의 index 1번째 요소의 html contents.
+    console.log($('header').find('h1').eq(1).html()) //find가 h1 2개를 return. 그것의 index 1번째 요소의 html contents.
     $('header').find('h1').eq(1).html('<hr>') //world가 있던 자리가 <hr>로 변함을 확인.
 
     $('ul').find('li').eq(2).html('index: 2').end() //index: 2라는 text가 index2번째 li에 들어감을 확인.
@@ -30,4 +30,4 @@ $(() => {//html method를 call한다.
     <li></li>
     <li></li>
 </ul>
-<footer><!--<mark></mark>--></footer>
+<footer><!--<mark>foot</mark>--></footer> <!--6번째줄로 write한 내용-->

@@ -1,15 +1,20 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    console.log($('.4').parent())       //직계부모만을 return.
+    //직계부모만을 return.
+    console.log($('.4').parent())
 
-    console.log($('.4').parents())      //부모들을 return.
+    //부모들을 return.
+    console.log($('.4').parents())
 
-    console.log($('.4').parents('div')) //div 인 부모들을 return.
+    //div 인 부모들을 return.
+    console.log($('.4').parents('div'))
 
-    console.log($('.4').parentsUntil('div.1'))//div.4초과 div.1 미만.
+    //div.4초과 div.1 미만.
+    console.log($('.4').parentsUntil('div.1'))
 
-    console.log($('.4').closest('div'))  //div.4 이상인 jquery object.
+    //div.4를 포함하여 가장 가까운 div jquery object 하나를 return.
+    console.log($('.4').closest('div'))
 })
 </script>
 
