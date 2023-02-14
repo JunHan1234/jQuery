@@ -1,0 +1,20 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //주어객체에 data를 집어넣는다. data write.
+    $('body').data('foo', 10) //.data(key, value) => 객체에 새로운 엔트리 추가.
+    $('body').data('bar', {isManual: true})
+    //객체에 넣을 data가 n개일 경우. object을 parameter에 쓴다.
+    $('body').data({
+        baz: [1, 2],
+        hoi: 'hello'
+    })
+    
+    //data read.
+    console.log($('body').data('foo'))
+    console.log($('body').data('bar'))
+
+    console.log($('body').data())
+})
+</script>
+

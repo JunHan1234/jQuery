@@ -9,13 +9,23 @@ $(() => {
     // 과제: ids를 'abc'로 serializing해서 idStr에 할당하라.
     let idStr = ids.toArray().join('')
     console.log(idStr)
-    /*
+    /* 내 답.
     let idStr = ids.toArray().reduce((i, e) => {
         i += e
         return i
     })
     console.log(idStr)
     */
+
+    console.log(ids.get()) //console에 array로 출력됨을 확인.
+    ids = $.map(ids.get(), (e, i) => e + 1)
+    console.log(ids)
+
+    let arr = $.map({
+        userName: 'adelia',
+        age: 20
+    }, (v, k) => v)
+    console.log(arr) //value값이 들어있는 array가 return.
 })
 </script>
 

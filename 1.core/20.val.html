@@ -1,0 +1,40 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    // 과제: text 변수에, <input type='text'>를 찾아서 할당하라.
+    let text = $(':text')
+    console.log(text)
+
+    //text의 속성값. 즉 user가 입력한 값을 읽을 수 있다.
+    console.log('|' + text.val() + '|')
+
+    text.val(' world ')
+    // 과제: text 의 value를, trim해서 text 객체에 저장하라.
+    text.val(text.val().trim()) //val의 parameter로 string을 써보았다.
+
+    text.val((i, v) => `hello ${v}`)//val의 parameter로 callback(=function)을 써보았다.
+
+    $('input').val(['noon', 'sea', 'banana'])
+})
+</script>
+
+<form>
+    <input type='text' value='hello'/><br>
+
+    <input type='checkbox' value='night' checked/>밤
+    <input type='checkbox' value='noon'/>낮
+
+    <input type='radio' value='mountain' checked/>산
+    <input type='radio' value='sea'/>바다
+
+    <select id='fruit'>
+        <option>apple</option>
+        <option>banana</option>
+    </select>
+
+    <select id='greens' multiple>
+        <option>cucumber</option>
+        <option>cabbage</option>
+        <option>carrot</option>
+    </select>
+</form>
