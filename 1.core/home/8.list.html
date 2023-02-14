@@ -1,0 +1,29 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    /*
+    for(let i = 0; i < 10; i++)
+        $(`<li>item ${i}</li>`).appendTo('ul')
+    */
+    /*  $('<li>', {
+        html: 'item ' + i
+    }).appendTo('ul')*/
+    let items = []
+    for(let i = 0; i < 10; i++)
+        items.push(`<li>item ${i}</li>`) //push를 이용해 item contents가 10개 담긴 collection을 만든다.
+   
+    //비싼 작업은 한번만!
+    $(items.join('')).appendTo('ul')
+})
+</script>
+
+<ul></ul>
+
+<!--
+    <ul>
+        <li>item 0</li>
+        <li>item 1</li>
+        ...
+        <li>item 9</li>
+    </ul>
+-->

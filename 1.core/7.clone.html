@@ -1,0 +1,26 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //div collection을 복제해서 hr tag들 안에 집어넣는다.
+    //이 경우 원본 div tag는 유지됨을 확인.
+    $('div').clone().appendTo('hr')
+})
+</script>
+
+<style>
+    div {
+        background-color: orange;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 3.5rem;
+    }
+
+    hr {
+        border: .1rem solid;
+    }
+</style>
+
+<div></div>
+<div></div>
+<hr>
+<hr>

@@ -22,7 +22,7 @@ $('a.external:first')
 <a class='external'></a>
 */
 
-$('li:odd')
+$('li:odd') //index가 홀수번째인 요소를 모두 가져온다.
 /*
 <ul>
     <li></li>

@@ -1,0 +1,25 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //div객체를 모두 들어내 hr tag들 각각 다음에 insert한다.
+    $('div').insertAfter($('hr'))
+})
+</script>
+
+<style>
+    div {
+        background-color: orange;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 3.5rem;
+    }
+
+    hr {
+        border: .1rem solid;
+    }
+</style>
+
+<div></div>
+<div></div>
+<hr>
+<hr>

@@ -1,0 +1,19 @@
+<!--global object은 window 이다.-->
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let $div1 = $('div')    //jquery object을 div1에 저장.
+    let $div2 = $div1.eq(0) //jquery object. 0번째 element collection return.
+    let div3 = $div1.get(0) //DOM object.
+
+    console.log($div1, $div2, div3) //dom object과 jquery object의 비교.
+    console.log(typeof $div1, typeof $div2, typeof div3)
+
+    let $div11 = $('div')
+    let $div22 = $div11.eq(0)
+    let div33 = $div11.get(0)
+    console.log($div1 == $div11, $div2 == $div22, div3 == div33)
+})
+</script>
+
+<div></div>
