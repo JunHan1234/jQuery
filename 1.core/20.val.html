@@ -14,9 +14,9 @@ $(() => {
 
     text.val((i, v) => `hello ${v}`)//val의 parameter로 callback(=function)을 써보았다.
 
-    //text의 경우 string값들이 , 포함해 전부 합쳐져서 write되는것을 확인.
-    //radio나 checkbox의 경우 해당 value가 있으면 체크 위치가 바뀌는 것을 확인
-    $('input').val(['noon', 'sea', 'banana'])
+    //text의 경우 string값들이 , 구분자로 전부 합쳐져서 하나의 string형태로 write되는것을 확인.
+    //radio나 checkbox의 경우 해당 value가 있으면 체크 위치가 바뀌는 것을 확인.
+    $('input').val(['noon', 'sea', 'banana']) //input tag가 아닌녀석은 당연하지만 무시된다.
 
     //해당하는 id값의 option들이 선택됨을 확인.
     $('#fruit').val('banana')

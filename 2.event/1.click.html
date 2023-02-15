@@ -3,8 +3,10 @@
 $(() => {
     let cnt = 0
 
+    //click event가 발생하면, <li>객체를 ul의 자식으로 append.
     $('button').eq(0).click(() => $(`<li>${cnt++}</li>`).appendTo('ul'))
-    $('button').eq(1).click(() => $('ul').empty()) //ul의 자식들을 없앨때 empty 사용.
+    //ul의 자식들을 없앨때 empty 사용.
+    $('button').eq(1).click(() => $('ul').empty()) /*{$('ul').empty(), cnt = 0}) // cnt 값도 0으로 초기화하고싶은 경우.*/
 })
 </script>
 
