@@ -1,0 +1,12 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //keyup handler를 이용하면 echo 효과를 볼 수 있다.
+    $('input').keyup(function() {
+        $('span').text($(this).val())
+    })
+})
+</script>
+
+<input type='text'/>
+<span></span>

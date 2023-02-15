@@ -1,7 +1,12 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    
+    $('a').click(e/*e에는 event 객체가 들어온다.*/ => {
+        e.preventDefault() //click event의 handler를 막아버린다.
+        $('body').append('<p>prevent default handler.</p>')
+    })
 })
 </script>
 
+<!-- a객체는 태생적으로 event handler를 가지고 있다. -->
+<a href='http://jquery.com'>jquery</a>
