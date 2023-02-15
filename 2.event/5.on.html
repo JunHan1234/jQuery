@@ -2,7 +2,25 @@
 <script>
 //문서상 준비되지 않은, user가 동적으로 등록하는 객체에 handler를 만들어보자.
 $(() => {
-    
+    //주어객체에 on method의 2번째 parameter에다가 handler를 추가시킨다.
+    $('#wrap').on({
+        //arrow function에서는 this변수를 못쓰기에 일반 function을 이용한다.
+        mouseenter: function() {
+            //mouseenter event가 발생한 객체가 this에 들어간다.
+            $(this).removeClass().addClass('circle mouseenter')
+        },
+        //과제: method 표기법으로 mouseleave event handler를 작성하라.
+        //      background 색을 없앤다.
+        mouseleave() {
+            $(this).removeClass().addClass('circle mouseleave')
+        }
+    }, '.circle')/*on method의 2번째 parameter로 selector를 동록*/
+
+    // $('button').on('click', () => $('#wrap').append($('.circle'))) //의도와 다르게 원 위치가 바뀌어버린다.
+    // $('button').on('click', () => $('#wrap').append($('.circle').clone())) //의도와 다르게 원이 제곱승으로 추가된다.
+    // 과제: create 버튼을 누를 때마다, 새로운 원 하나가 append 되도록 하라.
+    // $('button').on('click', () => $('#wrap').append($('.circle').eq(0).clone()))
+    $('button').on('click', () => $('#wrap').append($('.circle').first().clone()))
 })
 </script>
 
@@ -33,6 +51,8 @@ $(() => {
         background: '';
     }
 </style>
+
+<button type='button'>create</button>
 
 <div id='wrap'>
     <div class='circle'></div>

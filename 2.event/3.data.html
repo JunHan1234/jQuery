@@ -1,7 +1,7 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    //abel이라는 객체를 e: JQueryEventObject 객체에 넣는다.
+    //user가 abel이라는 객체를 e: JQueryEventObject 객체에 넣는다(입력 후 클릭으로 submit).
     $('button').click('abel', e => {
         let userName = $(':text').val()
         //user가 입력한 값이 abel이면 을 표현. (여기서 e.data는 abel이다.)

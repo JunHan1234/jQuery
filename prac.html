@@ -1,8 +1,21 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
 $(() => {
-    
+    let items = []
+    for(let i = 0; i < 10; i++)
+        items.push(`<li>item ${i}</li>`)
+    $('ul').html(items.join(''))
 })
 
 </script>
 
+<ul></ul>
+
+<!--
+    <ul>
+        <li>item 0</li>
+        <li>item 1</li>
+        ...
+        <li>item 9</li>
+    </ul>
+-->
