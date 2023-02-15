@@ -1,0 +1,14 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let cnt = 0
+
+    $('button').eq(0).click(() => $(`<li>${cnt++}</li>`).appendTo('ul'))
+    $('button').eq(1).click(() => $('ul').empty()) //ul의 자식들을 없앨때 empty 사용.
+})
+</script>
+
+<!--user에 의해 click event가 발생하면 handler 작동.-->
+<button type='button'>click</button>
+<button type='button'>clear</button>
+<ul></ul>

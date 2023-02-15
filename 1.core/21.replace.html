@@ -1,0 +1,30 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let greet = ' hello world '
+    log(greet.replace(' ', '')) //처음으로 발견된 space를 ''로 바꿔준다.
+    log(greet.replaceAll(' ', ''))//발견된 모든 space를 ''로 바꿔준다.
+    log(greet.replace(/\s/g, '')) //space문자(\s)를 global하게 찾아 ''로 바꾼다.
+    log(greet.replace(/^\s/g, '')) //머리부분에 있는 space문자를 바꾼다.
+    log(greet.replace(/\s$/g, '')) //꼬리부분에 있는 space문자를 바꾼다.
+    log(greet.replace(/^\s|\s$/g, '')) //머리와 꼬리부분의 space를 바꾼다.
+
+    greet = '1-2-3,4,5'
+    console.log(greet.replace(/-/g, ''))//-을 global하게 찾아 ''로 바꾼다.
+    console.log(greet.replace(/,/g, ''))//,를 global하게 찾아 ''로 바꾼다.
+    console.log(greet.replace(/[-,]/g, '')) //-과 ,를 global하게 찾아 ''로 바꾼다.
+
+    greet = '1-,2-,3-4,5'
+    console.log(greet.replace(/-,/g, '')) //-,를 global하게 찾아서 ''로 바꾼다.
+    
+    greet = 'hello\nworld'
+    console.log(greet)
+    //과제: helloworld가 출력되도록 하라.
+    console.log(greet.replace(/\n/g, ''))
+})
+
+function log(str) {
+    console.log('|' + str + '|')
+}
+</script>
+

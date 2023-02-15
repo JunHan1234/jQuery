@@ -1,0 +1,27 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //과제: 전화번호를 숫자만으로 정제하라.
+    /*
+    let phoneNum = $('input').val()
+    let refinedPhoneNum = ''
+
+    for(let char of phoneNum)
+        if('0' <= char && char <= '9')
+            refinedPhoneNum += char
+    
+    $('input').val(refinedPhoneNum)
+    */
+
+    $('input').val($('input').val().split('-').join(''))
+
+    //$('input').val($('input').val().replaceAll('-', ''))
+    //console.log($('input').val().replace('-', '').replace('-', ''))
+
+    //$('input').val($('input').val().replace(/-/g, '')) // -을 global하게 뒤져서 ''로 교체한다.
+})
+</script>
+
+<form>
+    <input type='tel' value='010-1234-5678'/>
+</form>

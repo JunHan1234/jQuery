@@ -9,7 +9,7 @@ $(() => {//html method를 call한다. =>주어객체 미만의 html contents를 
     console.log($('header').find('h1').eq(1).html()) //find가 h1 2개를 return. 그것의 index 1번째 요소의 html contents.
     
     //write.
-    $('header').find('h1').eq(1).html('<hr>') //world가 있던 자리가 <hr>로 변함을 확인.
+    $('header').find('h1').eq(1).html('<hr>') //h1 내부, world가 있던 자리가 <hr>로 변함을 확인.
 
     $('ul').find('li').eq(2).html('index: 2').end() //index: 2라는 text가 index2번째 li에 들어감을 확인.
         .eq(3).html('index: 3').end()       //end에서 return되는 collection은 li 5개이다. $('ul').find('li')와 동일.
