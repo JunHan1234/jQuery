@@ -10,7 +10,21 @@ $(() => {
         //else $('span').html('<mark>사용자명을 입력하세요.</mark>')
 
         // 과제: 위 에러 메세지를 빨간색으로 표현하라.
-        else $('span').text('사용자명을 입력하세요.').css({color: 'red'})
+        //else $('span').text('사용자명을 입력하세요.').css({color: 'red'}) //css('color', 'red')
+
+        // 과제: 에러 메세지를 빨간색으로 표현한다.
+        //       userName field border를 빨간색 점선으로 표현하라.
+        else {
+            $('span').text('사용자명을 입력하세요.').css({color: 'red'})
+            /*
+            $(':text').css({
+                'border-color': 'red',
+                'border-weight': '.1rem',
+                'border-style': 'dotted'
+            })
+            */
+            $(':text').css({border: '.1rem dotted red'})
+        }
     })
 })
 </script>

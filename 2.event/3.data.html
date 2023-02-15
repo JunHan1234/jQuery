@@ -1,0 +1,21 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //abel이라는 객체를 e: JQueryEventObject 객체에 넣는다.
+    $('button').click('abel', e => {
+        let userName = $(':text').val()
+        //user가 입력한 값이 abel이면 을 표현.
+        if(userName == e.data)
+            //맞다. 를 표현하고, 이를 show로 보여준다. 또한 fadeOut으로 메세지를 ms간 표현한다.
+            $('span').text(` vaild: ${e.data}`).show().fadeOut(3000)
+
+            //틀리다. 를 표현했다.
+        else $('span').text(` invaild: ${userName}`).show()
+    })
+})
+</script>
+
+<form>
+    <input type='text' name='userName' placeholder='사용자명'/><span></span><br>
+    <button type='button'>submit</button>
+</form>

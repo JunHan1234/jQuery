@@ -1,0 +1,40 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+//문서상 준비되지 않은, user가 동적으로 등록하는 객체에 handler를 만들어보자.
+$(() => {
+    
+})
+</script>
+
+<style>
+    #wrap {
+        margin: 1rem;
+    }
+
+    .circle {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 2.5rem;
+        border: .1rem solid;
+    }
+
+    .square {
+        width: 5rem;
+        height: 5rem;
+        border: .1rem solid;
+    }
+
+    .mouseenter {
+        background: red;
+    }
+
+    .mouseleave {
+        /* background를 없애고 싶은 경우엔 ''를 이용. */
+        background: '';
+    }
+</style>
+
+<div id='wrap'>
+    <div class='circle'></div>
+    <div class='square'></div>
+</div>

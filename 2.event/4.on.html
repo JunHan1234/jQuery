@@ -1,0 +1,16 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    //첫번째 parameter에 event를 적고,
+    //두번째로 이벤트 발생시 실행할 내용(event handler)을 적는다.
+    $('button').on('click', () => $('span').text(' clicked.'))
+
+    //on을 이용하면 handler 여러개를 등록할 수 있다.
+    $('button').on({
+        mouseover: () => $('span').text(' overed.'),
+        mouseout: () => $('span').text(' outed.')
+    })
+})
+</script>
+
+<button type='button'>confirm</button><span></span>
