@@ -9,12 +9,29 @@ $(() => {
             //json의 string이 object으로 parsing해서 data에 들어간다.
             success: (data) => {
                 // 과제: table에 data를 채워라.
+                let fruits = data.fruits
+                let fruit, col, val, tr, td //fruit이 tr, col이 td이다.
+
+                //fruits의 index가 row에 담긴다.
+                for(let row in fruits) {
+                    fruit = fruits[row]
+                    tr = table.find('tr').eq(row)
+
+                    col = 0
+                    for(let key in fruit) {
+                        val = fruit[key]
+                        td = tr.find('td').eq(col++)
+                        td.text(val)
+                    }
+                }
+                /*
                 let cursor = 0
                 for(let i = 0; i < data.fruits.length; i++) {
                     for(let [key, value] of Object.entries(data.fruits[i])) {
                         $('td').eq(cursor++).text(value)
                     }
                 }
+                */
             }
         })
     })
