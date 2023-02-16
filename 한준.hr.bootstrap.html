@@ -25,35 +25,50 @@ $(() => {
                 <td>${$(':text').val().trim()}</td>`)
             if($('#hireDate').val()) {
                 laborerList.push(`<td>${$('#hireDate').val()}</td></tr>`),
-                $(laborerList.join('')).appendTo($('tbody')),
-                laborerList = []
+                $(laborerList.join('')).appendTo($('tbody'))
             }
             else {
                 $('#err').text('입사일을 입력하세요.').show().fadeOut(1000),
-                --laborerId,
-                laborerList = []
+                --laborerId
             }
         }
         else {
-            $('#err').text('사용자명을 입력하세요.').show().fadeOut(1000),
-            laborerList = []
+            $('#err').text('사용자명을 입력하세요.').show().fadeOut(1000)
         }
+        
+        laborerList = []
     })
 
     //수정
-    $('.btn-success').click(() => {
-        if($(':radio').val() == 'on')
-            $('#')
+    $('#fixLaborer').click(() => {
+        .on('change', '.c', function() {
+        $('span').text($(this).val())
+    })
+        /*
+        if($(':text').val()) {
+            laborerList.push(`<td>${$(':text').val().trim()}</td>`)
+            if($('#hireDate').val()) {
+                laborerList.push(`<td>${$('#hireDate').val()}</td></tr>`),
+                $(laborerList.join('')).appendTo($('[name="checkLaborer"]:checked').closest('tr')),
+                $('[name="checkLaborer"]:checked').closest('tr').children().eq(1).remove(),
+                $('[name="checkLaborer"]:checked').closest('tr').children().eq(2).remove()
+            }
+            else {
+                $('#err').text('입사일을 입력하세요.').show().fadeOut(1000)
+            }
+        }
+        else {
+            $('#err').text('사용자명을 입력하세요.').show().fadeOut(1000)
+        }
+        
+        laborerList = []
+        */
     })
     
     //삭제
-    $('.btn-danger').click(() => {
-        if($(':radio').val() == 'on')
-            this.empty()
+    $("#deleteLaborerModal").click(function() {
+        $('[name="checkLaborer"]:checked').closest('tr').remove()
     })
-    /*
-    $('.btn-success').click(() => $('ul').empty())
-    */
 })
 </script>
 <title>한준.hr.bootstrap</title>
@@ -92,7 +107,7 @@ $(() => {
                         <i class='bi bi-plus-circle'></i>
                         <span class='d-none d-md-inline'>추가</span>
                     </div>
-                    <div class='btn btn-success'>
+                    <div class='btn btn-success' id='fixLaborer'>
                         <i class='bi bi-check-circle'></i>
                         <span class='d-none d-md-inline'>수정</span>
                     </div>
@@ -134,7 +149,7 @@ $(() => {
             </div>
             <div class='modal-footer'>
                 <div class='btn btn-secondary' data-bs-dismiss='modal'>아니오</div>
-                <div class='btn btn-primary'>예</div>
+                <div class='btn btn-primary' id='deleteLaborerModal' data-bs-dismiss='modal'>예</div>
             </div>
         </div>
     </div>
