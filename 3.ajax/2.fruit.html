@@ -1,0 +1,34 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    let table = $('tbody')
+    
+    $('button').click(() => {
+        $.ajax({//최소한으로 구현.
+            url: '2.data.json',
+            //json의 string이 object으로 parsing해서 data에 들어간다.
+            success: (data) => {
+                // 과제: table에 data를 채워라.
+                let cursor = 0
+                for(let i = 0; i < data.fruits.length; i++) {
+                    for(let [key, value] of Object.entries(data.fruits[i])) {
+                        $('td').eq(cursor++).text(value)
+                    }
+                }
+            }
+        })
+    })
+})
+</script>
+<!-- asynchronous이기때문에 현재 화면이 유지되며 계속 채워나갈 수 있다. -->
+<button type='button'>load</button>
+
+<table>
+    <thead>
+        <tr><th>이름</th><th>가격</th><th>기한</th><th>생산자</th></tr>
+    </thead>
+    <tbody>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+</table>

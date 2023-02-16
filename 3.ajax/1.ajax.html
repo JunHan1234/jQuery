@@ -1,0 +1,30 @@
+<script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+<script>
+$(() => {
+    $('button').click(() => {
+        $.ajax({
+            url: '1.data.json',
+            data: {color: 'yellow'}, //request에 보낼 data.
+            type: 'get', //request를 다루는 알고리즘을 get으로 설정.
+            datatype: 'json',
+
+            //response 성공 혹 실패를 받아본다.
+            //data에는 1.data.json이 들어온다.
+            success: (data, status, xhr) => { //status값으로 성공여부를 알아볼 수 있다.
+                $('<h3>').text(data.userName).appendTo('body')
+                $('<p>').html(status).appendTo('body')
+                console.log(xhr)
+            },
+            error: (xhr, status) => { //status값으로 실패인지 알아볼 수 있다.
+                console.log('error: ', status)
+                console.log(xhr)
+            },
+            complete: (xhr, status) => { //성공실패 관계없이 출력.
+                console.log('complete: ', status)
+            }
+        })
+    })
+})
+</script>
+
+<button type='button'>click</button>
