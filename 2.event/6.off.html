@@ -3,12 +3,12 @@
 $(() => {
     //주어객체에 handler등록시킨다.
     $('div').on({
-        mousedown: () => $('div').css('background', 'red'),
-        mouseup: () => $('div').css('background', 'green'),
-        mouseout: () => $('div').css('background', '')
+        mousedown: () => $('div').css('background', 'red'), //클릭holding상태
+        mouseup: () => $('div').css('background', 'green'), //클릭release상태
+        mouseout: () => $('div').css('background', '')      //마우스가 밖으로 나간 상태
     })
 
-    $('button').click(() => $('div').off('mouseup'))
+    $('button').click(() => $('div').off('mouseup')) //버튼클릭시 mouseup eventhandler 삭제
 })
 </script>
 

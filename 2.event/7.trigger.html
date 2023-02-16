@@ -7,8 +7,8 @@ $(() => {
 
     //버튼 클릭은 작업의 시작이다.
     //user가 two버튼을 누르면 app이 one버튼을 자동으로 클릭하도록 한다.
-    //$('#two').click(() => $('#one').trigger('click')) //event를 trigger시킨다.
-    $('#two').click(() => $('#one').click())
+    $('#two').click(() => $('#one').trigger('click')) //event를 trigger시킨다.
+    //$('#two').click(() => $('#one').click())
 })
 </script>
 
