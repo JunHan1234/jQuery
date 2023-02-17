@@ -25,24 +25,30 @@ $(() => {
                 $('.modal').find('.modal-body p').text('노동자를 추가하시겠습니까?')
                 $('.modal').find('.modal-footer').removeClass('visually-hidden')
 
-                $('#confirmBtn').click(function() {
+                $('#confirmBtn').click(() => {
                     $(laborerList.join('')).prependTo($('tbody'))
+                    laborerList = []
                     clearInputVal()
+                })
+
+                $('#dismissBtn').click(() => {
+                    laborerList = []
+                    --laborerId
                 })
             }
             else {
                 $('.modal').find('.modal-footer').addClass('visually-hidden');
                 $('.modal').find('.modal-body p').text('입사일을 입력하세요');
-                --laborerId
             }
         }
         else {
             $('.modal').find('.modal-footer').addClass('visually-hidden');
             $('.modal').find('.modal-body p').text('사용자명을 입력하세요.');
+            --laborerId
         }
         
-        laborerList = []
         checkLaborerTable()
+        console.log(laborerList)
     })
     //update
     $('#fixLaborer').click(() => {
@@ -78,7 +84,6 @@ $(() => {
             }
             
             laborerList = []
-            checkLaborerTable()
         })
     })
     //delete
@@ -189,13 +194,13 @@ $(() => {
     <div class='modal-dialog'>
         <div class='modal-content'>
             <div class='modal-header'>
-                <div class='btn-close btn-sm' data-bs-dismiss='modal'></div>
+                <div class='btn-close btn-sm' id='dismissBtn' data-bs-dismiss='modal'></div>
             </div>
             <div class='modal-body'>
                 <p></p>
             </div>
             <div class='modal-footer'>
-                <div class='btn btn-secondary' data-bs-dismiss='modal'>아니오</div>
+                <div class='btn btn-secondary' id='dismissBtn' data-bs-dismiss='modal'>아니오</div>
                 <div class='btn btn-primary' id='confirmBtn' data-bs-dismiss='modal'>예</div>
             </div>
         </div>
