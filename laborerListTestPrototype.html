@@ -39,15 +39,6 @@ $(() => {
     //update
     $('#fixLaborer').click(() => {
         if($('[name="checkLaborer"]:checked').val()) {
-            $('.modal').find('.modal-body p').text('노동자를 수정하시겠습니까?');
-            $('.modal').find('.modal-footer').removeClass('visually-hidden');
-        }
-        else {
-            $('.modal').find('.modal-footer').addClass('visually-hidden');
-            $('.modal').find('.modal-body p').text('수정할 노동자를 선택하세요.');
-        }
-        
-        $('#confirmBtn').click(function() {
             if($(':text').val().trim()) {
                 laborerList.push(`<td>${$(':text').val().trim()}</td>`)
                 if($('#hireDate').val()) {
@@ -60,34 +51,23 @@ $(() => {
                     clearInputVal()
                 }
                 else {
-                    $('.modal').find('.modal-body p').text('입사일을 입력하세요.')
-                    $('.modal').find('.modal-footer').addClass('visually-hidden')
+                    $('#err').text('입사일을 입력하세요.').show().fadeOut(1000)
                 }
             }
             else {
-                $('.modal').find('.modal-body p').text('사용자명을 입력하세요.')
-                $('.modal').find('.modal-footer').addClass('visually-hidden')
+                $('#err').text('사용자명을 입력하세요.').show().fadeOut(1000)
             }
             
             laborerList = []
             checkLaborerTable()
-        })
-    })
+        }
+        else $('#err').text('수정할 노동자를 선택하세요.').show().fadeOut(1000)
+
+    })    
     //delete
-    $('#delLaborer').click(function() {
-        if($('[name="checkLaborer"]:checked').val()) {
-            $('.modal').find('.modal-body p').text('노동자를 삭제하시겠습니까?');
-            $('.modal').find('.modal-footer').removeClass('visually-hidden');
-        }
-        else {
-            $('.modal').find('.modal-footer').addClass('visually-hidden');
-            $('.modal').find('.modal-body p').text('삭제할 노동자를 선택하세요.');
-        }
-    
-        $('#confirmBtn').click(function() {
-            $('[name="checkLaborer"]:checked').closest('tr').remove()
-            checkLaborerTable()
-        })
+    $('#deleteLaborerModal').click(function() {
+        $('[name="checkLaborer"]:checked').closest('tr').remove()
+        checkLaborerTable()
     })
     //예외처리
     $('input[type="text"]').keydown(function() {
