@@ -8,94 +8,90 @@
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js'></script>
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script>
-    let laborers = [] //database 준비.
+    let laborers = []
     let laborerId = function* genLaborerId() {
         let laborerId = 1
         while(true) yield laborerId++
     }()
 
-    //조사할 field를 parameter로 받는다.
-    //조사할 field는 jquery 객체가 들어올 예정이다.
     function isVal(field) {
         let isGood = false
         let errMsg
 
         if(!field.length) errMsg = '노동자를 선택하세요.'
         else {
-            //field value값이 없으면 표시할 errMsg.
             if(!field.val()) errMsg = field.attr('placeholder') + ' 입력하세요.'
             else isGood = true
         }
 
-        //isGood이 false일 때, modal에 띄울 errMsg 준비.
         if(!isGood) {
             $('#modalMsg').text(errMsg).css('color', 'red')
-            $('#modalBtn').hide() //modalBtn부분은 delete에서만 사용하기때문에 가린다.
+            $('#modalBtn').hide()
             $('#modal').modal('show')
         }
-        
+
         return isGood
     }
 
     function listLaborers() {
-        $('input').not(':radio').val('') //노동자명 입사일 쓰레기 청소
-        $('#laborers').empty()           //기존 노동자 목록 쓰레기 청소
+        $('input').not(':radio').val('')
+        $('#laborers').empty()
 
         if(laborers.length) {
-            const laborerArr = []   //incoding된 laborer를 넣을 곳.
+            const laborerArr = []
 
-            $.each(laborers, (i, laborer) => { //iterating.
-                laborerArr.unshift( //unshift는 내림차순 정렬을 위함.
+            $.each(laborers, (i, laborer) => {
+                laborerArr.unshift(
                     `<tr>
                         <td><input type='radio' value='${laborer.laborerId}' id='laborerId' name='laborerId'/></td>
                         <td>${laborer.laborerId}</td>
                         <td>${laborer.laborerName}</td>
                         <td>${laborer.hireDate}</td>
-                    </tr>`
+                    <tr>`
                 )
             })
-            
+
             $('#laborers').append(laborerArr.join(''))
-        } else $('#laborers').append( //else문, laborer가 없는경우.
+        } else $('#laborers').append(
             `<tr><td colspan='4' class='text-center'>노동자가 없습니다.</td></tr>`
         )
     }
 
     function init() {
         //노동자 추가
-        $('#addLaborerBtn').click(() => { //isVal의 parameter는 jquery function이여야함.
+        $('#addLaborerBtn').click(() => {
             if(isVal($('#laborerName')) && isVal($('#hireDate'))) {
                 let laborer = {
                     laborerId: laborerId.next().value,
                     laborerName: $('#laborerName').val(),
                     hireDate: $('#hireDate').val()
                 }
-                
-                laborers.push(laborer) //database array에 laborer객체를 push해서 담아준다.
-                listLaborers() //데이터를 넣어줬으니, 화면갱신을 한다. //해당 method가 call되고, append부분이 동작할 때 화면갱신이 됨.
+
+                laborers.push(laborer)
+                listLaborers()
             }
         })
 
         //노동자 수정
         $('#fixLaborerBtn').click(() => {
-            if(isVal($('#laborerId:checked')) &&
-                isVal($('#laborerName')) && isVal($('#hireDate'))) {
+            if(isVal($('#laborerId:checked'))
+            && isVal($('#laborerName')) && isVal($('#hireDate'))) {
                 let laborerId = $('#laborerId:checked').val()
 
                 let laborer = laborers.filter(laborer =>
-                    laborer.laborerId == laborerId)[0] //filter가 Array를 return하면 0번째 element를 가져온다.
+                    laborer.laborerId == laborerId)[0]
                 
                 if(laborer) {
                     laborer.laborerName = $('#laborerName').val()
                     laborer.hireDate = $('#hireDate').val()
-                    listLaborers() //state가 바뀌었으니, 화면갱신을 한다.
+                    listLaborers()
                 }
             }
         })
 
         $('#laborers').on({
-            change() { //laborers table check상태가 바뀔때 노동자명 입사일 양식이 해당 value로 바뀜.
-                $('#laborerName').val($(this).parent()/*td객체(radio)*/.next().next().text())
+            change() {
+                $('#laborerName').val($(this).parent().next().next().text())
                 $('#hireDate').val($(this).parent().next().next().next().text())
             }
         }, '#laborerId')
@@ -111,8 +107,6 @@
 
         $('#delLaborerOkBtn').click(() => {
             let laborerId = $('#laborerId:checked').val()
-            
-            //삭제할 노동자빼고, 나머지 살아남을 노동자 리스트 저장 //react방법.
             laborers = laborers.filter(laborer => laborer.laborerId != laborerId)
 
             $('#modal').modal('hide')
@@ -120,9 +114,9 @@
         })
     }
 
-    $(init) //jquery object 준비.
+    $(init)
 </script>
-<title>hr.jquery</title>
+<title>hr.jquery.prac</title>
 <style>
     
 </style>
